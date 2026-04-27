@@ -16,7 +16,10 @@
       "Bash(curl -L -o \"courtroom-hero.jpg\" \"https://images.unsplash.com/photo-1589994965851-a8f479c573a9?w=2400&q=85&auto=format&fit=crop\")",
       "Bash(npx next *)",
       "Bash(vercel inspect *)",
-      "Bash(vercel alias *)"
+      "Bash(vercel alias *)",
+      "Bash(find . -name \".DS_Store\" -not -path \"./node_modules/*\" -delete)",
+      "Bash(rm -f tsconfig.tsbuildinfo)",
+      "Bash(find . -name \".DS_Store\" -not -path \"./node_modules/*\")"
     ]
   }
 }
