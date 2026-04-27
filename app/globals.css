@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --zan-blue: #0b3c8c;
+  --zan-blue-700: #092f6f;
+  --zan-gold: #d6b15c;
+}
+
+@layer base {
+  html, body {
+    @apply bg-white text-zan-ink antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+  * { border-color: rgba(11, 60, 140, 0.12); }
+  ::selection { @apply bg-zan-600 text-white; }
+}
+
+@layer components {
+  .container-zan { @apply mx-auto max-w-6xl px-5 sm:px-8; }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-xl bg-zan-600 px-5 py-3 text-sm font-semibold text-white
+           shadow-soft transition hover:bg-zan-700 active:scale-[0.98]
+           focus:outline-none focus:ring-4 focus:ring-zan-600/25;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 rounded-xl border border-zan-600/20 bg-white px-5 py-3 text-sm font-semibold
+           text-zan-600 transition hover:border-zan-600/40 hover:bg-zan-50 active:scale-[0.98];
+  }
+  .btn-danger {
+    @apply inline-flex items-center gap-2 rounded-xl bg-red-600 px-5 py-3 text-sm font-semibold text-white
+           shadow-soft transition hover:bg-red-700 active:scale-[0.98]
+           focus:outline-none focus:ring-4 focus:ring-red-500/25;
+  }
+
+  .card {
+    @apply rounded-2xl border border-zan-600/10 bg-white p-6 shadow-[0_1px_0_0_rgba(11,60,140,0.04)];
+  }
+  .card-hover {
+    @apply transition hover:-translate-y-0.5 hover:border-zan-600/25 hover:shadow-soft;
+  }
+
+  .kbd {
+    @apply rounded-md border border-zan-600/20 bg-white px-1.5 py-0.5 text-[11px] font-medium text-zan-700;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-zan-600/15 bg-zan-50 px-3 py-1
+           text-xs font-medium text-zan-700;
+  }
+
+  .divider-dotted {
+    background-image: radial-gradient(rgba(11,60,140,0.25) 1px, transparent 1px);
+    background-size: 6px 6px;
+    height: 1px;
+  }
+
+  .prose-zan {
+    @apply text-[15px] leading-relaxed text-zan-ink;
+  }
+  .prose-zan h3 { @apply mt-4 mb-1.5 text-[15px] font-semibold text-zan-700; }
+  .prose-zan p  { @apply my-2; }
+  .prose-zan ul { @apply my-2 list-disc pl-5 marker:text-zan-600; }
+  .prose-zan ol { @apply my-2 list-decimal pl-5 marker:text-zan-600; }
+  .prose-zan strong { @apply font-semibold text-zan-ink; }
+  .prose-zan code {
+    @apply rounded bg-zan-50 px-1.5 py-0.5 font-mono text-[12.5px] text-zan-700;
+  }
+}
+
+/* Hero gradient ornaments */
+.hero-bg {
+  background:
+    radial-gradient(1200px 600px at 80% -20%, rgba(11,60,140,0.18), transparent 60%),
+    radial-gradient(900px 500px at -10% 20%, rgba(11,60,140,0.12), transparent 60%),
+    linear-gradient(180deg, #ffffff 0%, #f8faff 100%);
+}
+
+/* Subtle background grid */
+.grid-bg {
+  background-image: radial-gradient(rgba(11,60,140,0.08) 1px, transparent 0);
+  background-size: 22px 22px;
+}
+
+/* Scrollbar (webkit) */
+.scroll-zan::-webkit-scrollbar { width: 8px; height: 8px; }
+.scroll-zan::-webkit-scrollbar-thumb {
+  background: rgba(11,60,140,0.25); border-radius: 8px;
+}
+.scroll-zan::-webkit-scrollbar-thumb:hover { background: rgba(11,60,140,0.45); }
+
+/* Typing indicator */
+.typing span {
+  @apply mx-0.5 inline-block h-1.5 w-1.5 rounded-full bg-zan-600/70;
+  animation: typing 1.2s infinite ease-in-out;
+}
+.typing span:nth-child(2) { animation-delay: 150ms; }
+.typing span:nth-child(3) { animation-delay: 300ms; }
+@keyframes typing {
+  0%, 60%, 100% { transform: translateY(0); opacity: .4; }
+  30% { transform: translateY(-4px); opacity: 1; }
+}
+
+/* Voice mic ripple */
+.mic-ripple::after {
+  content: "";
+  position: absolute; inset: 0; border-radius: 9999px;
+  box-shadow: 0 0 0 0 rgba(11,60,140,0.55);
+  animation: mic 1.6s ease-out infinite;
+}
+@keyframes mic {
+  0% { box-shadow: 0 0 0 0 rgba(11,60,140,0.55); }
+  100% { box-shadow: 0 0 0 22px rgba(11,60,140,0); }
+}
+
+/* Gavel strike animation for judge page */
+.gavel-strike { transform-origin: 75% 25%; animation: gavel 1.8s ease-in-out infinite; }
+@keyframes gavel {
+  0%, 60%, 100% { transform: rotate(0deg); }
+  70% { transform: rotate(-22deg); }
+  78% { transform: rotate(8deg); }
+  88% { transform: rotate(-4deg); }
+}

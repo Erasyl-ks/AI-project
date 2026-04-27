@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Read(//opt/homebrew/bin/**)",
+      "Bash(command -v brew)",
+      "WebFetch(domain:www.anthropic.com)",
+      "WebSearch",
+      "WebFetch(domain:claude.com)",
+      "WebFetch(domain:support.claude.com)",
+      "Bash(npx tsc *)",
+      "Bash(vercel --prod --yes)",
+      "WebFetch(domain:adilet.zan.kz)",
+      "WebFetch(domain:www.akorda.kz)",
+      "Bash(vercel ls *)",
+      "Bash(curl -L -o \"courtroom-hero.jpg\" \"https://images.unsplash.com/photo-1589994965851-a8f479c573a9?w=2400&q=85&auto=format&fit=crop\")",
+      "Bash(npx next *)",
+      "Bash(vercel inspect *)",
+      "Bash(vercel alias *)"
+    ]
+  }
+}
